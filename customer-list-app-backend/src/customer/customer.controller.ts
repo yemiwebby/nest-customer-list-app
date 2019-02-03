@@ -1,4 +1,4 @@
-import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundException, Delete } from '@nestjs/common';
+import { Controller, Get, Res, HttpStatus, Post, Body, Put, Query, NotFoundException, Delete, Param } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 import { CreateCustomerDTO } from './dto/create-customer.dto';
 
@@ -13,8 +13,17 @@ export class CustomerController {
         return res.status(HttpStatus.OK).json(customers);
     }
 
+    // Fetch a particular customer using ID
+    @Get('customer/:customerID')
+    async getPost(@Res() res, @Param('customerID') postID) {
+        const customer = await this.customerService.getCustomer(postID);
+        if (!customer) throw new NotFoundException('Customer does not exist!');
+        return res.status(HttpStatus.OK).json(customer);
+
+    }
+
     // add a customer
-    @Post('/customer')
+    @Post('/create')
     async addCustomer(@Res() res, @Body() createCustomerDTO: CreateCustomerDTO) {
         const customer = await this.customerService.addCustomer(createCustomerDTO);
         return res.status(HttpStatus.OK).json({
