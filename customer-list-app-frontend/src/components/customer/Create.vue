@@ -43,7 +43,7 @@
 
 <script>
 import axios from "axios";
-import { server } from "../../utils/helper";
+import { server } from "../../helper";
 import router from "../../router";
 export default {
   data() {
@@ -56,10 +56,6 @@ export default {
       description: ""
     };
   },
-  created() {
-    // this.date_posted = new Date().toLocaleDateString();
-  },
-  mounted() {},
   methods: {
     createCustomer() {
       let customerData = {

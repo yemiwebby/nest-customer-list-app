@@ -49,8 +49,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import { server } from "@/utils/helper";
+import { server } from "../helper";
 import axios from "axios";
 
 export default {
