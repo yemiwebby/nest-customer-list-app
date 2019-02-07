@@ -15,8 +15,8 @@ export class CustomerController {
 
     // Fetch a particular customer using ID
     @Get('customer/:customerID')
-    async getPost(@Res() res, @Param('customerID') postID) {
-        const customer = await this.customerService.getCustomer(postID);
+    async getCustomer(@Res() res, @Param('customerID') customerID) {
+        const customer = await this.customerService.getCustomer(customerID);
         if (!customer) throw new NotFoundException('Customer does not exist!');
         return res.status(HttpStatus.OK).json(customer);
 
