@@ -6,7 +6,7 @@ import { CustomerModule } from './customer/customer.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/customer-app', { useNewUrlParser: true }),
+    MongooseModule.forRoot('mongodb://demo:demo1234@ds127825.mlab.com:27825/customer-app', { useNewUrlParser: true }),
     CustomerModule
   ],
   controllers: [AppController],
