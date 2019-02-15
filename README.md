@@ -1,4 +1,4 @@
-# Build a blog using Nest.js, Vue.js and MongoDB
+# Build a customer management app using Nest.js, Vue.js and MongoDB
 
 Application repo for a customer list management application built with Nest.js, Vue.js and MongoDB.
 
